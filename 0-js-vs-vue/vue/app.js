@@ -8,7 +8,7 @@ const app = Vue.createApp({
     methods: {
         addTodo(){
             this.todoList.push(this.todoText)
-            this.todoText = ''
+            this.todoText = ""
         }
     }
-}).mount('#app')
+}).mount("#app")
