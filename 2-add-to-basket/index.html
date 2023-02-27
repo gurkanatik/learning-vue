@@ -16,20 +16,24 @@
     <ul>
         <li v-for="product in products">
             {{ product.name }} - ${{ product.price }}
-            <button @click="addToBasket(product.id)">Add 2 Basket</button>
+            <button @click="inc(product.id)">Add 2 Basket</button>
         </li>
     </ul>
     <hr>
     <h1>Basket</h1>
     <ul>
-        <li v-for="basket_product in basket" v-if="basket.length">
+        <li v-if="basket.length" v-for="basket_product in basket">
             {{ basket_product.name }} - ${{ basket_product.price }} - {{ basket_product.qty }}
-            <button @click="basket_product.qty++">+</button>
-            <button @click="basket_product.qty > 1 ? basket_product.qty-- : removeFromBasket(basket_product.id)">-</button>
+            <button @click="inc(basket_product.id)">+</button>
+            <button @click="dec(basket_product.id)">-</button>
             <button @click="removeFromBasket(basket_product.id)">Remove From Basket</button>
         </li>
         <div v-else>No item</div>
     </ul>
+    <hr>
+    <div v-if="notifications.length" v-for="notification in notifications">
+        <div class="notification notification-{{notification.class_name}}">{{ notification.message }}</div>
+    </div>
 </div>
 
 <script src="app.js"></script>
