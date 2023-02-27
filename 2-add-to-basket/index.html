@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add 2 Basket</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        *{
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>Products</h1>
+    <ul>
+        <li v-for="product in products">
+            {{ product.name }} - ${{ product.price }}
+            <button @click="addToBasket(product.id)">Add 2 Basket</button>
+        </li>
+    </ul>
+    <hr>
+    <h1>Basket</h1>
+    <ul>
+        <li v-for="basket_product in basket">
+            {{ basket_product.name }} - ${{ basket_product.price }} - {{ basket_product.qty }}
+            <button @click="basket_product.qty++">+</button>
+            <button @click="basket_product.qty > 1 ? basket_product.qty-- : removeFromBasket(basket_product.id)">-</button>
+            <button @click="removeFromBasket(basket_product.id)">Remove From Basket</button>
+        </li>
+    </ul>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
