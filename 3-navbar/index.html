@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body{
+            margin: 0;
+        }
+        *{
+            user-select: none;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #efefef;
+        }
+        .navbar{
+            width: 300px;
+            height: calc(100% - 52px);
+            position: fixed;
+            left: -100%;
+            top: 51.5px;
+            background-color: #efefef;
+            transition: all .3s;
+        }
+        .navbar.active{
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <header>
+        <a href="index.html">Logo</a>
+        <button @click="navbar = !navbar">Navbar</button>
+    </header>
+    <div class="navbar" :class="navClasses"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
