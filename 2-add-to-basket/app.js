@@ -8,7 +8,8 @@ const app = Vue.createApp({
                 {id: 4, name: "product 4", price: 4.99}
             ],
             basket: [],
-            notifications: []
+            notifications: [],
+            search: ""
         }
     },
     methods: {
@@ -64,6 +65,11 @@ const app = Vue.createApp({
                 setTimeout(() => this.notifications.shift(), ms)
             }
             this.notifications
+        }
+    },
+    computed: {
+        filteredProducts(){
+            return this.products.filter((product) => product.name.includes(this.search))
         }
     }
 }).mount("#app")
