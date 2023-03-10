@@ -45,6 +45,14 @@ export default {
           .then((response) => {
             this.$store.state.todoList.push(response)
             this.newTodoInput.value = ''
+            this.$swal({
+              toast: true,
+              position: 'top-end',
+              icon: 'success',
+              title: 'New todo added!',
+              showConfirmButton: false,
+              timer: 1500
+            });
           })
     }
   }

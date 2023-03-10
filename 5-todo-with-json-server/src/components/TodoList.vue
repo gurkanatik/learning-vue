@@ -52,9 +52,15 @@ export default {
           .then((response) => {
             let todoIndex = this.$store.state.todoList.findIndex((item) => item.id === id)
             this.$store.state.todoList[todoIndex] = response
+            this.$swal({
+              toast: true,
+              position: 'top-end',
+              icon: 'success',
+              title: 'Todo updated!',
+              showConfirmButton: false,
+              timer: 1500
+            });
           })
-
-
     }
   },
   computed: {

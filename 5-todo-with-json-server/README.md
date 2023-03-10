@@ -35,3 +35,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 5. Bootstrap 5
 6. Fontawesome 6
 7. Sass (scss)
+8. SweetAlert

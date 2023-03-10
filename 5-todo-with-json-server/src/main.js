@@ -19,7 +19,15 @@ library.add({
     faPlus, faCheck, faSpinner, faTrash
 })
 
+/**
+ * SweetAlert
+ */
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+
 const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(store)
+app.use(VueSweetalert2);
 app.mount('#app')
