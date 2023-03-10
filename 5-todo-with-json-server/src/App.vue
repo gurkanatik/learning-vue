@@ -30,6 +30,16 @@ export default {
   components: {
     addTodoModal,
     todoList
+  },
+  mounted() {
+    this.getTodoList()
+  },
+  methods: {
+    getTodoList(){
+      fetch('http://localhost:3000/todoList')
+          .then((response) => response.json())
+          .then((response) => this.$store.state.todoList = response)
+    }
   }
 }
 </script>

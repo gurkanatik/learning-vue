@@ -1,3 +1,6 @@
+*{
+  user-select: none;
+}
 .list-group{
   .list-group-item{
     &.completed{

@@ -32,9 +32,20 @@ export default {
     }
   },
   methods: {
-    addNewTodo(){
-      this.$store.state.todoList.push({id: new Date().getTime(), todo: this.newTodoInput.value, status: 0})
-      this.newTodoInput.value = ''
+    addNewTodo() {
+      let todo = {id: new Date().getTime(), todo: this.newTodoInput.value, status: 0}
+      fetch('http://localhost:3000/todoList', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(todo)
+      })
+          .then((response) => response.json())
+          .then((response) => {
+            this.$store.state.todoList.push(response)
+            this.newTodoInput.value = ''
+          })
     }
   }
 }

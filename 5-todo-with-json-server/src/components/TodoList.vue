@@ -41,8 +41,20 @@ export default {
   },
   methods: {
     changeTodoStatus(id, status){
-      //fetch
-      this.$store.state.todoList.find((item) => item.id === id).status = status
+      fetch('http://localhost:3000/todoList/' + id, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({status: status})
+      })
+          .then((response) => response.json())
+          .then((response) => {
+            let todoIndex = this.$store.state.todoList.findIndex((item) => item.id === id)
+            this.$store.state.todoList[todoIndex] = response
+          })
+
+
     }
   },
   computed: {
