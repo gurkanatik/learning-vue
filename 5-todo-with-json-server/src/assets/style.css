@@ -1,0 +1,11 @@
+.list-group .list-group-item.completed {
+  background-color: rgba(39, 174, 96, 0.15);
+}
+.list-group .list-group-item.pending {
+  background-color: rgba(243, 156, 18, 0.15);
+}
+.list-group .list-group-item.deleted {
+  background-color: rgba(231, 76, 60, 0.15);
+}
+
+/*# sourceMappingURL=style.css.map */
