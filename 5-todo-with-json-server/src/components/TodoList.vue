@@ -41,6 +41,7 @@ export default {
   },
   methods: {
     changeTodoStatus(id, status){
+      //fetch
       this.$store.state.todoList.find((item) => item.id === id).status = status
     }
   },
