@@ -13,4 +13,17 @@
       background-color: rgba(231, 76, 60, 0.15);
     }
   }
+  .button{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .list-group{
+    .list-group-item{
+      button{
+        width: 100%;
+      }
+    }
+  }
 }

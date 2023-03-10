@@ -3,7 +3,7 @@
     {
       "id": 1,
       "todo": "Learn Vue",
-      "status": 1
+      "status": 0
     },
     {
       "id": 2,
@@ -13,17 +13,12 @@
     {
       "id": 3,
       "todo": "Learn Angular",
-      "status": 1
+      "status": 2
     },
     {
       "id": 4,
       "todo": "Learn Php",
-      "status": 0
+      "status": 2
     },
-    {
-      "id": 1678486386723,
-      "todo": "sa",
-      "status": 1
-    }
   ]
 }
