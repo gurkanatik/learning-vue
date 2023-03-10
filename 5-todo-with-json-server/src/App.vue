@@ -11,7 +11,9 @@
           </div>
         </div>
         <div class="card-body">
-          <todo-list />
+          <todo-list getterName="pendingTodos" caption="Pending Todos" />
+          <todo-list getterName="completedTodos" caption="Completed Todos" />
+          <todo-list getterName="deletedTodos" caption="Deleted Todos" />
         </div>
       </div>
     </div>
